@@ -1,0 +1,87 @@
+/* Global styles for all elements to ensure consistency */
+* {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    font-family: 'Poppins', sans-serif;
+    /* Set a consistent font family throughout the app */
+}
+
+
+/* Styling for the html and body elements */
+html,
+body {
+    background: #c0b7b7;
+    /* Set the background color for the entire page */
+}
+
+
+/* Container for the form providing relative positioning context */
+.form-container {
+    position: relative;
+    /* Positioning context for absolute positioning inside */
+    left: 20%;
+    /* Position the container 20% from the left side of the viewport */
+    width: 60%;
+    /* Set the width of the container to 60% of the viewport width */
+    height: 100vh;
+    /* Set the height to be 100% of the viewport height */
+    background-color: white;
+    /* Set the background color of the form container */
+}
+
+
+/* Styling for the contact form itself */
+.contact-form {
+    position: absolute;
+    /* Position the form absolutely within its parent container */
+    top: 10%;
+    /* Position the form 10% from the top of its container */
+    left: 10%;
+    /* Position the form 10% from the left of its container */
+    width: 80%;
+    /* The form width is 80% of its container */
+    min-height: 600px;
+    /* Minimum height for the form */
+}
+
+
+/* Styling for input fields and textarea within the form */
+input,
+textarea {
+    width: 100%;
+    /* Make input and textarea elements take up 100% of their parent's width */
+    margin-top: 2rem;
+    /* Add top margin to space out the elements */
+    border: none;
+    /* Remove default borders */
+    border-bottom: 1px solid black;
+    /* Add a bottom border for a minimalistic look */
+    padding: 10px;
+    /* Add padding for better readability */
+}
+
+
+/* Styling for the submit button */
+.submit {
+    border: 1px solid black;
+    /* Add a solid border around the submit button */
+    padding: 1rem;
+    /* Add padding inside the button for better clickability */
+    text-align: center;
+    /* Center the text inside the button */
+    background-color: white;
+    /* Set the background color of the button */
+    cursor: pointer;
+    /* Change the cursor to a pointer to indicate it's clickable */
+}
+
+
+/* Styling for the submit button on hover */
+.submit:hover {
+    opacity: 0.6;
+    /* Change the opacity when hovered to give a visual feedback */
+}

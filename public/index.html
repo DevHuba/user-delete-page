@@ -3,28 +3,27 @@
 
 <head>
     <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
-    <link rel="stylesheet" href="/style.css"> <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to external CSS file for styling -->
     <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Preconnect to load fonts faster -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Google fonts link for 'Poppins' font -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design meta tag -->
-    <title>Contact Form</title> <!-- Title of the document shown in the browser tab -->
+    <title>CNC Basics support</title> <!-- Title of the document shown in the browser tab -->
 </head>
 
 <body>
     <div class="form-container"> <!-- Container for the form to style it specifically -->
-        <form class="contact-form"> <!-- Form element where user inputs will be submitted -->
+        <form class="contact-form" action="/send-email" method="post" enctype="multipart/form-data"> <!-- Form element where user inputs will be submitted -->
             <h2>CONTACT</h2> <!-- Heading of the form -->
-            <input type="text" id="name" placeholder="Full name"><br> <!-- Input field for name -->
-            <input type="email" id="email" placeholder="Email"><br>
-            <!-- Input field for email, validates email format -->
-            <input type="text" id="subject" placeholder="Subject"><br> <!-- Input field for subject -->
-            <textarea id="message" placeholder="Message" cols="30" rows="10"></textarea><br>
+            <input type="text" id="name" placeholder="Email or nickname in app"><br> <!-- Input field for name -->
+            <input type="email" id="to" value="mrfeedback@proton.me" readonly><br>
+            <input type="text" id="subject" value="Delete account data" readonly ><br>
+            <textarea id="message" value="Describe Your problem..." cols="30" rows="10"></textarea><br>
             <!-- Textarea for longer message input -->
             <input type="submit" class="submit" value="Send Message"> <!-- Submit button to send the form data -->
         </form>
     </div>
-    <script src="/app.js"></script> <!-- Link to external JavaScript file for scripting -->
+    <script src="/index.js"></script> Link to external JavaScript file for scripting
 </body>
 
 </html>

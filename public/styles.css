@@ -48,13 +48,21 @@ body {
     /* Minimum height for the form */
 }
 
+h2 {
+    color: rgb(80, 198, 141);
+    margin-bottom: 1rem;
+}
+
+label {
+    color: rgb(80, 198, 141);
+}
 
 /* Styling for input fields and textarea within the form */
 input,
 textarea {
     width: 100%;
     /* Make input and textarea elements take up 100% of their parent's width */
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     /* Add top margin to space out the elements */
     border: none;
     /* Remove default borders */
@@ -77,6 +85,7 @@ textarea {
     /* Set the background color of the button */
     cursor: pointer;
     /* Change the cursor to a pointer to indicate it's clickable */
+    margin-top: 1rem;
 }
 
 

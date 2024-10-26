@@ -18,18 +18,29 @@ const FROM = process.env.FROM;
 const TO = process.env.TO
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
+    console.log("name : ", req.body.name)
+    console.log("req.body.subject : ", req.body.subject)
+    
 });
 
 // upload.array('attachments', 10),  // add this into post req
 
 app.post('/send-email', (req, res) => { // Allow up to 10 files
-    const { name, email, message, subject } = req.body;
-    // const files = req.files;
+    const { name, to, message, subject } = req.body;
 
+    console.log("name : ", req.body.name)
+    console.log("to : ", req.body.to)
+    console.log("subject : ", req.body.subject)
+    console.log("message : ", req.body.message)
+    
+    if (!name || !to || !message || !subject){
+        console.log("Missing required fields in form data.")
+        return res.status(400)
+    }
 
     // Create a nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -44,7 +55,7 @@ app.post('/send-email', (req, res) => { // Allow up to 10 files
     const mailOptions = {
         from: `${name} <${FROM}>`,
         to: TO,
-        subject: subject + " From:" + email,
+        subject: subject,
         text: message,
         // attachments:files.map(file => ({
         //     filename: file.originalname,
@@ -63,6 +74,7 @@ app.post('/send-email', (req, res) => { // Allow up to 10 files
         // files.forEach(file => fs.unlinkSync(file.path));
         res.send('<script>alert("Email sent successfully!"); window.location.href = "/";</script>');
     });
+
 });
 
 app.listen(PORT, () => {

@@ -12,9 +12,14 @@
 </head>
 
 <body>
+    <img id="img" src="ic_launcher.png" alt="CNC Basics" class="app-icon">
     <div class="form-container"> <!-- Container for the form to style it specifically -->
+        <h3 id="h3">This page was created to provide a connection between CNC Basics developers and customers to delete their account
+        information.</h3>
+        <h5 id="h5">Please complete the form and send us your app username, email, and last password so we can find your account and delete
+        it. Please read the notes below.</h5>
         <form class="contact-form" action="/send-email" method="post" enctype="multipart/form-data"> <!-- Form element where user inputs will be submitted -->
-            <h2>CONTACT</h2> <!-- Heading of the form -->
+            <h2 id="form_header">CONTACT</h2> <!-- Heading of the form -->
             <label for="name">User</label>
             <input type="text" id="name" name="name" placeholder="Email or nickname in app"><br> <!-- Input field for name -->
             <label for="email">Email</label>
@@ -26,7 +31,10 @@
             <!-- Textarea for longer message input -->
             <input type="submit" class="submit" value="Send Message"> <!-- Submit button to send the form data -->
         </form>
+    
     </div>
+    <h5 id="h5">Please note that we don`t delete accounts that have activity at least in the last 30 days. You must provide all
+    necessary info for us to be sure that You are the account owner...</h5>
     <script src="index.js"></script>
 </body>
 

@@ -18,6 +18,12 @@ body {
     /* Set the background color for the entire page */
 }
 
+#img{
+    margin: 5rem;
+    height: 10rem;
+    width: 10rem;
+}
+
 
 /* Container for the form providing relative positioning context */
 .form-container {
@@ -27,7 +33,7 @@ body {
     /* Position the container 20% from the left side of the viewport */
     width: 60%;
     /* Set the width of the container to 60% of the viewport width */
-    height: 100vh;
+    height: 60vh;
     /* Set the height to be 100% of the viewport height */
     background-color: white;
     /* Set the background color of the form container */
@@ -36,9 +42,9 @@ body {
 
 /* Styling for the contact form itself */
 .contact-form {
-    position: absolute;
+    position: relative;
     /* Position the form absolutely within its parent container */
-    top: 10%;
+    top:3%;
     /* Position the form 10% from the top of its container */
     left: 10%;
     /* Position the form 10% from the left of its container */
@@ -49,8 +55,23 @@ body {
 }
 
 h2 {
+    margin-bottom: 2rem;
+}
+
+#h3 {
+    color: #716d6d;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+#h5 {
+    color: #716d6d;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+#form_header{
     color: rgb(80, 198, 141);
-    margin-bottom: 1rem;
 }
 
 label {

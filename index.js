@@ -21,6 +21,7 @@ const TO = process.env.TO
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 app.use(multer().any())
 
 

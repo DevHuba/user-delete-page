@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
 // const fs = require('fs');
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
+const { log } = require('console');
+const multer = require('multer');
 dotenv.config()
 
 const app = express();
@@ -19,12 +21,11 @@ const TO = process.env.TO
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(multer().any())
+
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-    console.log("name : ", req.body.name)
-    console.log("req.body.subject : ", req.body.subject)
-    
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // upload.array('attachments', 10),  // add this into post req
@@ -32,10 +33,7 @@ app.get('/', (req, res) => {
 app.post('/send-email', (req, res) => { // Allow up to 10 files
     const { name, to, message, subject } = req.body;
 
-    console.log("name : ", req.body.name)
-    console.log("to : ", req.body.to)
-    console.log("subject : ", req.body.subject)
-    console.log("message : ", req.body.message)
+    console.log("subject post : ", req.body.subject)
     
     if (!name || !to || !message || !subject){
         console.log("Missing required fields in form data.")
